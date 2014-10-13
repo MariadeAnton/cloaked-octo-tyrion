@@ -1,3 +1,7 @@
 ---
 language: generic
-script: echo ohai
+env:
+- FOO=dist APP_NAME=awesome TEAM_NAME='iPhone Distribution: Awesome, Inc. (ZZZZZZZZZZ)'
+script:
+- echo ohai
+- echo $TEAM_NAME
