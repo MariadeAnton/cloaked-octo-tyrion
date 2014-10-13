@@ -3,4 +3,4 @@ env:
 - "FOO=dist APP_NAME=awesome TEAM_NAME='iPhone Distribution: Awesome, Inc. (ZZZZZZZZZZ)'"
 - FOO=dist APP_NAME=awesome TEAM_NAME='iPhone Distribution: Awesome, Inc. (ZZZZZZZZZZ)'
 script:
-- env
+- env | sort
