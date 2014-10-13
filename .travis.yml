@@ -1,7 +1,6 @@
 ---
-language: generic
 env:
-- FOO=dist APP_NAME=awesome TEAM_NAME='iPhone Distribution: Awesome, Inc. (ZZZZZZZZZZ)'
+- "FOO=dist APP_NAME=awesome TEAM_NAME='iPhone Distribution: Awesome, Inc. (ZZZZZZZZZZ)'"
+- FOO2=dist APP_NAME2=awesome TEAM_NAME2='iPhone Distribution: Awesome, Inc. (ZZZZZZZZZZ)'
 script:
-- echo ohai
-- echo $TEAM_NAME
+- env
