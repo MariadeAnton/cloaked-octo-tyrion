@@ -1,9 +1,1 @@
-{
-  "language": "ruby",
-  "sudo": false,
-  "ruby": [
-    "2.1.4",
-    "1.9.3"
-  ],
-  "script": "ruby wat.rb"
-}
+{"sudo": false, "ruby": ["2.1.4", "1.9.3"], "language": "ruby", "script": "ruby wat.rb"}
