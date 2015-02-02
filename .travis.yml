@@ -16,3 +16,5 @@ go:
 - 1.0.3
 - master
 - tip
+install: go get -x -v .
+script: go test -x -v .
