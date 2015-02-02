@@ -2,6 +2,6 @@ language: bash
 sudo: false
 install: echo sure
 script:
-- curl -sSL http://download.nextag.com/apache//ant/binaries/apache-ant-1.9.4-bin.tar.bz2 | tar --strip-components=1 xjf -
+- curl -sSL http://download.nextag.com/apache//ant/binaries/apache-ant-1.9.4-bin.tar.bz2 | tar -xjf - --strip-components=1
 - ./bin/ant -version
 - ./bin/ant
