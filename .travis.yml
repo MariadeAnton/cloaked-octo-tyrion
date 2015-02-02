@@ -1,5 +1,10 @@
 language: go
 sudo: false
+env:
+  matrix:
+  - GIMME_ARCH=amd64
+  - GIMME_ARCH=arm
+  - GIMME_ARCH=386
 os:
   - linux
   - osx
@@ -18,3 +23,7 @@ go:
 - tip
 install: go get -x -v .
 script: go test -x -v .
+matrix:
+  allow_failures:
+  - env: GIMME_ARCH=arm
+  - env: GIMME_ARCH=386
