@@ -4,3 +4,5 @@ install: echo sure
 script:
 - curl -sSL -O http://download.nextag.com/apache//ant/binaries/apache-ant-1.9.4-bin.tar.bz2
 - tar xjvf apache-ant-1.9.4-bin.tar.bz2
+- ./apache-ant-1.9.4-bin/bin/ant -version
+- ./apache-ant-1.9.4-bin/bin/ant
