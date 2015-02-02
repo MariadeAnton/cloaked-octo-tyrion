@@ -1,5 +1,8 @@
 language: go
 sudo: false
+os:
+  - linux
+  - osx
 gobuild_args: -x -v
 go:
 - go1
