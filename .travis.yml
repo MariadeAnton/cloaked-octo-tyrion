@@ -17,5 +17,6 @@ before_install:
   - perlbrew use perl-5.14.2
   - perl --version
   - cpanm --version
+  - find ~/perl5 -name perl -type f || true
 install: echo not really
 script: echo not really
