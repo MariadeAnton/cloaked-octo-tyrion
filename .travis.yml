@@ -1,5 +1,8 @@
 language: perl
 sudo: false
+cache:
+  directories:
+  - $HOME/perl5/perlbrew/perls/perl-5.14.2
 before_install:
   - perlbrew list
   - perlbrew -v install perl-5.14.2
