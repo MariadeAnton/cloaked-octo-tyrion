@@ -1,4 +1,7 @@
 language: perl
 sudo: false
 perl:
-  - "5.14.2"
+  - 5.14.4
+before_install:
+  - perlbrew -v install perl-5.14.2
+  - perlbrew use 5.14.2
