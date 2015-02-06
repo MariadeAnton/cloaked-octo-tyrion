@@ -12,5 +12,7 @@ before_install:
   - for mod in ExtUtils::MakeMaker Dist::Zilla Moose Test::Pod Test::Pod::Coverage Test::Exception Dist::Zilla::Plugin::Bootstrap::lib LWP Module::Install Test::Most ; do
       cpanm ${mod} --force --notest || true ;
     done
+  - perl --version
+  - cpanm --version
 install: echo not really
 script: echo not really
