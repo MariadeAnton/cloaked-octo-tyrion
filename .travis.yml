@@ -10,5 +10,5 @@ before_install:
       tee /tmp/perlbrew-install.log | sed 's/.*/\./' | tr "\n" " "
   - perlbrew use perl-5.14
   - for mod in ExtUtils::MakeMaker Dist::Zilla Moose Test::Pod Test::Pod::Coverage Test::Exception Dist::Zilla::Plugin::Bootstrap::lib LWP Module::Install Test::Most ; do
-      cpanm ${mod} --force --notest ;
+      cpanm ${mod} --force --notest || true ;
     done
