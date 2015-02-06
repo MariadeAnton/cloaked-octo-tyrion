@@ -8,11 +8,13 @@ before_install:
   - perlbrew list | grep -q 5.14.2 || (
       perlbrew install -v -j 2 perl-5.14.2 --as perl-5.14 --notest --noman --force 2>&1 |
         tee /tmp/perlbrew-install.log | sed 's/.*/\./' | tr "\n" " " ;
+      perlbrew alias -f create 5.14 5.14.2 ;
       perlbrew use perl-5.14 ;
       for mod in ExtUtils::MakeMaker Dist::Zilla Moose Test::Pod Test::Pod::Coverage Test::Exception Dist::Zilla::Plugin::Bootstrap::lib LWP Module::Install Test::Most ; do
         cpanm ${mod} --force --notest || true ;
       done ;
     )
+  - perlbrew use perl-5.14.2
   - perl --version
   - cpanm --version
 install: echo not really
