@@ -6,7 +6,8 @@ cache:
   - $HOME/.cpanm
 before_install:
   - perlbrew list
-  - perlbrew install -v -j 2 perl-5.14.2 --as perl-5.14 --notest --noman --force
+  - perlbrew install -v -j 2 perl-5.14.2 --as perl-5.14 --notest --noman --force 2>&1 |
+      tee /tmp/perlbrew-install.log | sed 's/.*/\./' | tr "\n" " "
   - perlbrew use perl-5.14
   - for mod in ExtUtils::MakeMaker Dist::Zilla Moose Test::Pod Test::Pod::Coverage Test::Exception Dist::Zilla::Plugin::Bootstrap::lib LWP Module::Install Test::Most ; do
       cpanm ${mod} --force --notest ;
