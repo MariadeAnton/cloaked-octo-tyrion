@@ -12,8 +12,8 @@ env:
 install:
 - echo wait for it
 - sleep 1
-- exit $CODE
+- ./exit-with $CODE
 script:
 - echo wait for it
 - sleep 1
-- exit $CODE
+- ./exit-with $CODE
