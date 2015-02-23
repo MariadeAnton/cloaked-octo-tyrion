@@ -1,21 +1,13 @@
-language: go
+language: bash
 sudo: false
+os:
+- linux
+- osx
 env:
   matrix:
-  - GIMME_ARCH=amd64
-  - GIMME_ARCH=arm
-  - GIMME_ARCH=386
-os:
-  - linux
-  - osx
-gobuild_args: -x -v
-go:
-- go1
-- 1.4.1
-- tip
-install: go get -x -v .
-script: if [ $GIMME_ARCH = amd64 ] ; then go test -x -v . ; else echo NOPE ; fi
-matrix:
-  allow_failures:
-  - env: GIMME_ARCH=arm
-  - env: GIMME_ARCH=386
+  - CODE=0
+  - CODE=1
+  - CODE=2
+  - CODE=3
+install: echo whatever
+script: exit $CODE
