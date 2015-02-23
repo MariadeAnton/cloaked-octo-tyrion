@@ -9,5 +9,11 @@ env:
   - CODE=1
   - CODE=2
   - CODE=3
-install: echo whatever
-script: exit $CODE
+install:
+- echo wait for it
+- sleep 1
+- exit $CODE
+script:
+- echo wait for it
+- sleep 1
+- exit $CODE
