@@ -1,19 +1,6 @@
-language: bash
+language: ruby
 sudo: false
-install:
-- mkdir -p ~/debs
-- curl -sSL -o ~/debs/bc.deb http://lug.mtu.edu/ubuntu/pool/main/b/bc/bc_1.06.95-2_amd64.deb
+before_install:
+- gem install extlib -v 0.9.16
 script:
-- date -u | tee right-now
-- echo what a wonderful world
-cache_options:
-  s3:
-    access_key_id:
-      secure: gXYcz0jWR3TALaaoVewru3jXaMuyc66XwU8Eu8hBPVhGjhEqW0cV9SvARDfmPrWtcGexz8bkBglxEbs9QdB2voEW5N4eeh1QPU67hWeRWnmJtuS4D63+rzHObL+HqMeOyu7NbXz8dKznsE+IIJn15p7QsPs+tiU4IGHL0YZPkYI=
-    secret_access_key:
-      secure: mKqfszl95PKFYCcGpdTfl0zmVK2nkcuBeJVjpcgZM6OnFSxgKBIfHFTIi8cQvHNNOV+WABvz/Xs+jgOEJpBgX7akaaghoNskplEO2OSo3peV2yYln4utyC//5sjyBBNqYhuvPYScvdXYHQI1gPyJrlJGg8H0npioUymtB+FhDug=
-    bucket:
-      secure: FnJKmVoKFaIG3PhODHQy28Ie0rh/XjDbBZP+x53WttMIzRJH6UqxM6QC3H0UexQNEz1kumTo+xPpRrGM4zfRw0rdlNumnIDhReSCN55Qt4aHSMGhcPdmDGeU30D/gOV4Ix1jou33BA3qXYz3UzMFk95Ih0OmEJM3qIr+1Coc0oU=
-cache:
-  directories:
-  - $HOME/debs
+- ruby -rextlib -e 'puts RUBY_VERSION'
