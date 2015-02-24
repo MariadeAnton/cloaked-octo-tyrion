@@ -3,7 +3,9 @@ sudo: false
 install:
 - mkdir -p ~/debs
 - curl -sSL -o ~/debs/bc.deb http://lug.mtu.edu/ubuntu/pool/main/b/bc/bc_1.06.95-2_amd64.deb
-script: date -u | tee right-now
+script:
+- date -u | tee right-now
+- echo what a wonderful world
 cache_options:
   s3:
     access_key_id:
