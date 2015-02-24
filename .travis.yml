@@ -1,21 +1,17 @@
-language: go
+language: bash
 sudo: false
-env:
-  matrix:
-  - GIMME_ARCH=amd64
-  - GIMME_ARCH=arm
-  - GIMME_ARCH=386
-os:
-  - linux
-  - osx
-gobuild_args: -x -v
-go:
-- go1
-- 1.4.1
-- tip
-install: go get -x -v .
-script: if [ $GIMME_ARCH = amd64 ] ; then go test -x -v . ; else echo NOPE ; fi
-matrix:
-  allow_failures:
-  - env: GIMME_ARCH=arm
-  - env: GIMME_ARCH=386
+install:
+- mkdir -p ~/debs
+- curl -sSL -o ~/debs/bc.deb http://lug.mtu.edu/ubuntu/pool/main/b/bc/bc_1.06.95-2_amd64.deb
+script: date -u | tee right-now
+cache_options:
+  s3:
+    access_key_id:
+      secure: gXYcz0jWR3TALaaoVewru3jXaMuyc66XwU8Eu8hBPVhGjhEqW0cV9SvARDfmPrWtcGexz8bkBglxEbs9QdB2voEW5N4eeh1QPU67hWeRWnmJtuS4D63+rzHObL+HqMeOyu7NbXz8dKznsE+IIJn15p7QsPs+tiU4IGHL0YZPkYI=
+    secret_access_key:
+      secure: mKqfszl95PKFYCcGpdTfl0zmVK2nkcuBeJVjpcgZM6OnFSxgKBIfHFTIi8cQvHNNOV+WABvz/Xs+jgOEJpBgX7akaaghoNskplEO2OSo3peV2yYln4utyC//5sjyBBNqYhuvPYScvdXYHQI1gPyJrlJGg8H0npioUymtB+FhDug=
+    bucket:
+      secure: FnJKmVoKFaIG3PhODHQy28Ie0rh/XjDbBZP+x53WttMIzRJH6UqxM6QC3H0UexQNEz1kumTo+xPpRrGM4zfRw0rdlNumnIDhReSCN55Qt4aHSMGhcPdmDGeU30D/gOV4Ix1jou33BA3qXYz3UzMFk95Ih0OmEJM3qIr+1Coc0oU=
+cache:
+  directories:
+  - $HOME/debs
