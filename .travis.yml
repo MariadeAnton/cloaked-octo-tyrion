@@ -1,5 +1,6 @@
 language: ruby
 sudo: false
+bundler_args: --without doc production
 before_install:
 - gem install extlib -v 0.9.16
 script:
