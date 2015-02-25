@@ -1,4 +1,3 @@
 scipy
-tables
 msgpack-python
 PyYAML
