@@ -1,7 +1,4 @@
-language: ruby
+language: python
+python: 3.4
 sudo: false
-bundler_args: --without doc production
-before_install:
-- gem install extlib -v 0.9.16
-script:
-- ruby -rextlib -e 'puts RUBY_VERSION'
+script: python -c 'import scipy'
