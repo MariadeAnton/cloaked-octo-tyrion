@@ -1,21 +1,14 @@
-language: go
+language: ruby
 sudo: false
-env:
-  matrix:
-  - GIMME_ARCH=amd64
-  - GIMME_ARCH=arm
-  - GIMME_ARCH=386
-os:
-  - linux
-  - osx
-gobuild_args: -x -v
-go:
-- go1
-- 1.4.1
-- tip
-install: go get -x -v .
-script: if [ $GIMME_ARCH = amd64 ] ; then go test -x -v . ; else echo NOPE ; fi
-matrix:
-  allow_failures:
-  - env: GIMME_ARCH=arm
-  - env: GIMME_ARCH=386
+cache:
+  bundler: true
+notifications:
+  email: false
+addons:
+  sauce_connect:
+    username: meatballhat
+    access_key:
+      secure: kKhRinh57TsgNlLaKKfBf6UbI3pzScRG3sBlsVS4I8eUpIzFoNqcqoF8yE7srAPruAtSmXZ61IFBrnC40AMt2kVsr9CrfJntnU0BH+iDcgMlNvJxCjZGQ8Ait4xysbc+ZSGEOX7R4gLXQiW0E7ndN+UQ2vtM/4QoX17D5ibq+iU=
+before_script:
+- gem install rack
+- rackup --port 8000 &
