@@ -1,21 +1,37 @@
-language: go
+language: java
 sudo: false
 env:
-  matrix:
-  - GIMME_ARCH=amd64
-  - GIMME_ARCH=arm
-  - GIMME_ARCH=386
-os:
-  - linux
-  - osx
-gobuild_args: -x -v
-go:
-- go1
-- 1.4.1
-- tip
-install: go get -x -v .
-script: if [ $GIMME_ARCH = amd64 ] ; then go test -x -v . ; else echo NOPE ; fi
-matrix:
-  allow_failures:
-  - env: GIMME_ARCH=arm
-  - env: GIMME_ARCH=386
+  global:
+  - PATH="$HOME/.deps/ant/bin:$PATH"
+  - LD_LIBRARY_PATH="$HOME/.deps/protobuf/lib:$LD_LIBRARY_PATH"
+addons:
+  apt_packages:
+  - tree
+cache:
+  directories:
+  - $HOME/.deps
+before_install:
+- mkdir -p $HOME/.deps
+- if [ ! -d $HOME/.deps/protobuf ] ; then
+    curl -sSL https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.gz |
+      tar xz -C /tmp -f - ;
+    cd /tmp/protobuf-2.5.0 ;
+    ./configure --prefix=$HOME/.deps/protobuf ;
+    make -j3 ;
+    make install ;
+    popd ;
+    popd ;
+    ldconfig -v ;
+  fi
+- if [ ! -d $HOME/.deps/ant ] ; then
+    pushd /tmp ;
+    curl -sSL -O https://www.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.bz2 ;
+    tar xjf apache-ant-1.9.4-bin.tar.bz2 ;
+    mv apache-ant-1.9.4 $HOME/.deps/ant ;
+    popd ;
+  fi
+- pushd $HOME/.deps && tree && popd
+- pkg-config --exists protobuf
+- ant -version
+install: ant 
+script: echo not really
