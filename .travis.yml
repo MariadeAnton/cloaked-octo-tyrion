@@ -19,15 +19,11 @@ before_install:
     ./configure --prefix=$HOME/.deps/protobuf ;
     make -j3 ;
     make install ;
-    popd ;
-    popd ;
-    ldconfig -v ;
   fi
 - if [ ! -d $HOME/.deps/ant ] ; then
-    pushd /tmp ;
-    curl -sSL -O https://www.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.bz2 ;
-    tar xjf apache-ant-1.9.4-bin.tar.bz2 ;
-    mv apache-ant-1.9.4 $HOME/.deps/ant ;
+    curl -sSL https://www.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.bz2 |
+      tar xj -C /tmp -f - ;
+    mv /tmp/apache-ant-1.9.4 $HOME/.deps/ant ;
     popd ;
   fi
 - pushd $HOME/.deps && tree && popd
