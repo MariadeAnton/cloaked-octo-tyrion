@@ -2,30 +2,32 @@ language: java
 sudo: false
 env:
   global:
-  - PATH="$HOME/.deps/ant/bin:$PATH"
-  - LD_LIBRARY_PATH="$HOME/.deps/protobuf/lib:$LD_LIBRARY_PATH"
+  - PATH="$HOME/bin:$PATH"
+  - PKG_CONFIG_PATH="$HOME/lib/pkgconfig:$PKG_CONFIG_PATH"
+  - LD_LIBRARY_PATH="$HOME/lib:$LD_LIBRARY_PATH"
 addons:
   apt_packages:
   - tree
 cache:
   directories:
-  - $HOME/.deps
+  - $HOME/lib
+  - $HOME/bin
 before_install:
-- mkdir -p $HOME/.deps
-- if [ ! -d $HOME/.deps/protobuf ] ; then
+- mkdir -p $HOME/bin $HOME/lib
+- if [ ! -f $HOME/lib/libprotobuf.a ] ; then
     curl -sSL https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.gz |
       tar xz -C /tmp -f - ;
     cd /tmp/protobuf-2.5.0 ;
-    ./configure --prefix=$HOME/.deps/protobuf ;
+    ./configure --prefix=$HOME ;
     make -j3 ;
     make install ;
   fi
-- if [ ! -d $HOME/.deps/ant ] ; then
+- if [ ! -d $HOME/bin/ant ] ; then
     curl -sSL https://www.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.bz2 |
-      tar xj -C /tmp -f - ;
-    mv /tmp/apache-ant-1.9.4 $HOME/.deps/ant ;
+      tar xj -C $HOME -f - --strip-components=1 ;
   fi
-- pushd $HOME/.deps && tree && popd
+- pushd $HOME/bin && tree && popd
+- pushd $HOME/lib && tree && popd
 - pkg-config --exists protobuf
 - ant -version
 install: ant 
