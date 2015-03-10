@@ -24,7 +24,6 @@ before_install:
     curl -sSL https://www.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.bz2 |
       tar xj -C /tmp -f - ;
     mv /tmp/apache-ant-1.9.4 $HOME/.deps/ant ;
-    popd ;
   fi
 - pushd $HOME/.deps && tree && popd
 - pkg-config --exists protobuf
