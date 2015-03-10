@@ -32,4 +32,4 @@ before_install:
 - pkg-config --modversion protobuf
 - ant -version
 install: ant 
-script: echo not really
+script: echo do nothing
