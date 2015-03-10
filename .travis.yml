@@ -28,7 +28,7 @@ before_install:
   fi
 - pushd $HOME/bin && tree && popd
 - pushd $HOME/lib && tree && popd
-- pkg-config --exists protobuf
+- pkg-config --modversion protobuf
 - ant -version
 install: ant 
 script: echo not really
