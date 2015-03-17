@@ -1,21 +1,12 @@
 language: go
+addons:
+  ssh_known_hosts:
+    - bitbucket.org
+    - meatballhat.com:9999
+    - /
 sudo: false
-env:
-  matrix:
-  - GIMME_ARCH=amd64
-  - GIMME_ARCH=arm
-  - GIMME_ARCH=386
-os:
-  - linux
-  - osx
 gobuild_args: -x -v
 go:
-- go1
 - 1.4.1
 - tip
 install: go get -x -v .
-script: if [ $GIMME_ARCH = amd64 ] ; then go test -x -v . ; else echo NOPE ; fi
-matrix:
-  allow_failures:
-  - env: GIMME_ARCH=arm
-  - env: GIMME_ARCH=386
