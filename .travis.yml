@@ -4,6 +4,7 @@ addons:
     - bitbucket.org
     - meatballhat.com:9999
     - /
+    - __$
 sudo: false
 gobuild_args: -x -v
 go:
