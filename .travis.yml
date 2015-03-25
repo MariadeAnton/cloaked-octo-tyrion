@@ -1,7 +1,7 @@
 language: generic
 sudo: false
 install: echo install
-script: echo script "${FOO#}"
+script: echo script $FOO
 env:
   global:
     secure: cxDYTurCbijMStVsEKr+tfb6boparAWB3k7ClMMgmy/JT3eWli7sTmtD3azFKTyCYIdC7IlddAK5Tp7pEcheFpbsJYR/2hiZSnvwRMrlSAa34lsiN2C0PWaNJ1C/xljNozJiHRGa2O76hIqZhu+VOo9nwY0r84F0BGtx8wsvvUI=
