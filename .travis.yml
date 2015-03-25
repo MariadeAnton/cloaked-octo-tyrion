@@ -1,4 +1,5 @@
 language: generic
+sudo: false
 install: echo install
 script: echo script "${FOO#}"
 env:
