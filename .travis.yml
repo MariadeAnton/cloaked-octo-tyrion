@@ -1,19 +1,6 @@
-language: generic
+language: node_js
+node_js:
+- 0.10.38
 sudo: false
-env:
-  global:
-    secure: cxDYTurCbijMStVsEKr+tfb6boparAWB3k7ClMMgmy/JT3eWli7sTmtD3azFKTyCYIdC7IlddAK5Tp7pEcheFpbsJYR/2hiZSnvwRMrlSAa34lsiN2C0PWaNJ1C/xljNozJiHRGa2O76hIqZhu+VOo9nwY0r84F0BGtx8wsvvUI=
-addons:
-  apt_sources:
-  - chef-stable-precise
-  - deadsnakes
-  - unknown-source
-  apt_packages:
-  - chefdk
-  - python2.3
 install: echo install
-script:
-- command -v chef
-- command -v shef
-- command -v kitchen
-- command -v python2.3
+script: echo script
