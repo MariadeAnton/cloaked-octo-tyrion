@@ -1,8 +1,8 @@
 language: generic
 sudo: false
-env:
-  global:
-    secure: cxDYTurCbijMStVsEKr+tfb6boparAWB3k7ClMMgmy/JT3eWli7sTmtD3azFKTyCYIdC7IlddAK5Tp7pEcheFpbsJYR/2hiZSnvwRMrlSAa34lsiN2C0PWaNJ1C/xljNozJiHRGa2O76hIqZhu+VOo9nwY0r84F0BGtx8wsvvUI=
+os:
+- linux
+- osx
 addons:
   apt:
     sources:
@@ -13,8 +13,4 @@ addons:
     - chefdk
     - python2.3
 install: echo install
-script:
-- command -v chef
-- command -v shef
-- command -v kitchen
-- command -v python2.3
+script: echo script
