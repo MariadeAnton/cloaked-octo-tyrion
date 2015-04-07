@@ -3,7 +3,9 @@ sudo: false
 matrix:
   include:
   - python: "2.7"
-    env: A=1 B=2 C=3
+    env:
+    - A=1 B=2 C=3
+    - D=4 E=5 F=6
   - python: "2.7"
     env: A=2 B=3 C=1
   - python: "2.7"
