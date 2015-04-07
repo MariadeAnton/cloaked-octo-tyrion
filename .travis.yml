@@ -3,6 +3,7 @@ sudo: false
 matrix:
   include:
   - language: generic
+    script: bash --version
   - language: ruby
     ruby: 2.2.1
     sudo: required
