@@ -1,3 +1,4 @@
 language: bash
 sudo: zendesk
-script: curl icanhazip.com
+script:
+- curl icanhazip.com
