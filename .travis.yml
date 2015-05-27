@@ -1,5 +1,10 @@
 language: bash
-sudo: required
-dist: trusty
-install: docker pull 'busybox:latest'
-script: docker run busybox echo whatever
+addons:
+  apt:
+    sources:
+    - r-packages-precise
+    packages:
+    - r-base
+install: echo install
+script: echo script
+after_script: cat ~/apt-get-update.log
