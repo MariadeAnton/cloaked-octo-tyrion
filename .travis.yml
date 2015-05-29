@@ -1,5 +1,9 @@
 language: bash
-sudo: required
-dist: trusty
-install: docker pull 'busybox:latest'
-script: docker run busybox echo whatever
+script:
+- echo "set in repository settings:"
+- echo $MLTEST
+- echo "set in .travis.yml:"
+- echo $MLTEST2
+env:
+  global:
+    secure: FKYkoonj5OGBS+pz27H/voNNVS3zQeNeScztsI/2QiaG+oUugO5tZu0p7ZMTo0cRB9qTYkaERv2KIdLjAD38PHCQThffz+LF2d0zUS79M3xwSTxHeqxJljDlGgPz6EAo8EjxaHdNUz6Khlj44UEyXljFTFKRGAqClrjuLbSbpUI=
