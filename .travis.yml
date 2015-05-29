@@ -1,5 +1,4 @@
 language: bash
-sudo: required
-dist: trusty
-install: docker pull 'busybox:latest'
-script: docker run busybox echo whatever
+sudo: false
+install: echo install
+script: env | grep '^TRAVIS'
