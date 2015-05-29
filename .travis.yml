@@ -1,4 +1,5 @@
 language: bash
+sudo: false
 script:
 - echo "set in repository settings:"
 - echo $MLTEST
