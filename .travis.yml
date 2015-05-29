@@ -1,4 +1,4 @@
 language: bash
 sudo: false
 install: echo install
-script: env | grep '^TRAVIS'
+script: env | grep '^TRAVIS' | sort
