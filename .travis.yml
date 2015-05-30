@@ -5,10 +5,12 @@ addons:
     packages:
     - dnsutils
 env:
-- DOWNLOAD_URL="https://s3.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
-- DOWNLOAD_URL="https://s3-us-west-2.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
-- DOWNLOAD_URL="https://s3-ap-southeast-2.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
-- DOWNLOAD_URL="https://s3-eu-west-1.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
+- S3_ENDPOINT="s3.amazonaws.com"
+- S3_ENDPOINT="s3-external-1.amazonaws.com"
+- S3_ENDPOINT="s3-us-west-2.amazonaws.com"
+- S3_ENDPOINT="s3-ap-southeast-2.amazonaws.com"
+- S3_ENDPOINT="s3-eu-west-1.amazonaws.com"
 install:
-- dig $(ruby -ruri -e "puts URI('$DOWNLOAD_URL').host")
-- ./download-a-bunch $DOWNLOAD_URL
+- export DOWNLOAD_URL="https://$S3_ENDPOINT/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
+- dig "$S3_ENDPOINT"
+- ./download-a-bunch "$DOWNLOAD_URL"
