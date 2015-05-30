@@ -1,13 +1,3 @@
 language: bash
 sudo: false
-env:
-  global:
-  - PATH=$HOME/bin:$PATH
-cache:
-  debug: true
-  directories:
-  - $HOME/.local/cache
-install: ./install-stuff
-script:
-- packer version
-- artifacts --version
+install: ./download-a-bunch
