@@ -3,7 +3,7 @@ sudo: false
 addons:
   apt:
     packages:
-    - dig
+    - dnsutils
 env:
 - DOWNLOAD_URL="https://s3.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
 - DOWNLOAD_URL="https://s3-us-west-2.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
