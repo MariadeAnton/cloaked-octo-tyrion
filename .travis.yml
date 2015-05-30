@@ -1,3 +1,10 @@
 language: bash
 sudo: false
-install: ./download-a-bunch
+env:
+- DOWNLOAD_URL="https://s3.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
+- DOWNLOAD_URL="https://s3-us-west-2.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
+- DOWNLOAD_URL="https://s3-ap-southeast-2.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
+- DOWNLOAD_URL="https://s3-eu-west-1.amazonaws.com/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
+install:
+- dig $(ruby -ruri -e "puts URI('$DOWNLOAD_URL').host")
+- ./download-a-bunch $DOWNLOAD_URL
