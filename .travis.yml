@@ -11,7 +11,7 @@ install:
 - mkdir -p $HOME/.local/cache
 - cd $HOME/.local/cache ;
   if [ ! -f packer_0.7.5_linux_amd64.zip ] ; then
-    curl -sSL -O https://dl.bintray.com/mitchellh/packer/packer_0.7.5_linux_amd64.zip
+    curl -sSL -O https://dl.bintray.com/mitchellh/packer/packer_0.7.5_linux_amd64.zip ;
   fi
 - mkdir -p $HOME/bin
 - cd $HOME/bin && unzip $HOME/.local/cache/packer_0.7.5_linux_amd64.zip
