@@ -1,16 +1,5 @@
 language: bash
 sudo: false
-addons:
-  apt:
-    packages:
-    - dnsutils
-env:
-- S3_ENDPOINT="s3.amazonaws.com"
-- S3_ENDPOINT="s3-external-1.amazonaws.com"
-- S3_ENDPOINT="s3-us-west-2.amazonaws.com"
-- S3_ENDPOINT="s3-ap-southeast-2.amazonaws.com"
-- S3_ENDPOINT="s3-eu-west-1.amazonaws.com"
-install:
-- export DOWNLOAD_URL="https://$S3_ENDPOINT/meatballhat/artifacts/stable/build/linux/amd64/artifacts"
-- dig "$S3_ENDPOINT"
-- ./download-a-bunch "$DOWNLOAD_URL"
+before_script:
+- echo $GOMAXPROCS
+- nproc
