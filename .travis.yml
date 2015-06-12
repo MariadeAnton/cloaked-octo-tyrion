@@ -1,3 +1,4 @@
 language: php
 sudo: false
+install: php composer.phar install
 script: echo script
