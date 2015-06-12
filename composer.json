@@ -1,0 +1,21 @@
+{
+  "name": "foofoofoo",
+  "description": "foo foofo oooofofofofofofof",
+  "keywords": ["database", "sql", "xml", "difference", "compare"],
+  "license": "NO NO NO",
+  "require": {
+    "php": ">=5.3.0",
+    "ext-dom": "*",
+    "ext-pcre": "*",
+    "ext-pgsql": "*",
+    "ext-simplexml": "*",
+    "ext-spl": "*"
+  },
+  "require-dev": {
+    "ext-mysql": "*",
+    "ext-pgsql": "*",
+    "phing/phing": "2.7.*",
+    "pirum/pirum": "1.1.*",
+    "phpunit/phpunit": "4.4.*"
+  }
+}
