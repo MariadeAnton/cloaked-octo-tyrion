@@ -1,5 +1,5 @@
-language: bash
+language: php
 sudo: false
-before_script:
-- echo $GOMAXPROCS
-- nproc
+install: echo install
+script:
+- curl -vvvv http://getcomposer.org/installer | php
