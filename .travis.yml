@@ -1,5 +1,18 @@
 language: bash
 sudo: false
-before_script:
-- echo $GOMAXPROCS
-- nproc
+
+install: echo install
+script: cat ~/.travis*
+
+matrix:
+  include:
+  - language: android
+  - language: erlang
+  - language: go
+  - language: haskell
+  - language: jvm
+  - language: node-js
+  - language: perl
+  - language: php
+  - language: python
+  - language: ruby
