@@ -1,5 +1,19 @@
-language: bash
+language: go
+
 sudo: false
+
+env:
+  global:
+  - PGPORT=5433
+
+addons:
+  apt:
+    sources:
+    - precise-pgdg-9.5
+    packages:
+    - postgresql-9.5
+  postgresql: 9.5
+
 before_script:
-- echo $GOMAXPROCS
-- nproc
+- psql --version
+- psql -tAc 'select version();'
