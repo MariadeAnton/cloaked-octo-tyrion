@@ -1,5 +1,6 @@
 language: generic
-sudo: 9000
+services:
+- docker
 install: docker version
 script:
 - docker build -t cloaked-octo-tyrion .
