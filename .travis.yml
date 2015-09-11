@@ -1,5 +1,7 @@
 language: generic
 
+group: dev
+
 services:
 - docker
 
