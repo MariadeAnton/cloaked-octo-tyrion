@@ -1,7 +1,10 @@
 language: generic
+
 services:
 - docker
+
 install: docker version
+
 script:
 - docker build -t cloaked-octo-tyrion .
 - docker run -it cloaked-octo-tyrion
