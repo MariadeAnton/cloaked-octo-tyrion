@@ -8,5 +8,7 @@ services:
 install: docker version
 
 script:
+- lsb_release -a
+- uname -a
 - docker build -t cloaked-octo-tyrion .
 - docker run -it cloaked-octo-tyrion
