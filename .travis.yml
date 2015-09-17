@@ -2,6 +2,8 @@ language: perl
 
 sudo: required
 
+perl: 5.22
+
 services:
 - docker
 
