@@ -1,11 +1,6 @@
-language: perl
+language: generic
 
-sudo: required
-
-perl: 5.22
-
-services:
-- docker
+dist: trusty
 
 install: echo whatever eh
 script: sudo docker run busybox echo ohai
