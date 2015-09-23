@@ -2,5 +2,7 @@ language: generic
 
 dist: trusty
 
+group: edge
+
 install: echo whatever eh
 script: sudo docker run busybox echo ohai
