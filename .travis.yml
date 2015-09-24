@@ -5,4 +5,11 @@ dist: trusty
 group: edge
 
 install: echo whatever eh
-script: sudo docker run busybox echo ohai
+
+script:
+- sudo docker run busybox echo ohai
+- echo $JAVA_HOME
+- cat /etc/hosts
+- stat ~/.ssh
+- stat ~/.ssh/authorized_keys
+- stat ~/.ssh/known_hosts
