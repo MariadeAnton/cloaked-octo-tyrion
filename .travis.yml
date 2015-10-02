@@ -10,10 +10,11 @@ script:
 - sudo docker run busybox echo ohai
 - echo $JAVA_HOME
 - cat /etc/hosts
-- ping -c 3 localhost
-- ping -c 3 127.0.0.1
-- host localhost
-- host $(hostname)
+- ping -c 1 localhost
+- ping -c 1 127.0.0.1
+- python -m SimpleHTTPServer 19494 &>/dev/null &
+- sleep 3
+- curl 'http://localhost:19494/'
 - stat ~/.ssh
 - stat ~/.ssh/authorized_keys
 - stat ~/.ssh/known_hosts
