@@ -2,6 +2,11 @@ language: generic
 
 dist: trusty
 
+matrix:
+  include:
+  - group: edge
+  - group: whatever
+
 install: echo whatever eh
 
 script:
@@ -14,6 +19,7 @@ script:
 - sleep 3
 - curl -s 'http://localhost:19494/'
 - echo GET / | nc localhost 19494
+- python -c 'import socket;print socket.gethostname()'
 - stat ~/.ssh
 - stat ~/.ssh/authorized_keys
 - stat ~/.ssh/known_hosts
