@@ -2,8 +2,6 @@ language: generic
 
 dist: trusty
 
-group: edge
-
 install: echo whatever eh
 
 script:
