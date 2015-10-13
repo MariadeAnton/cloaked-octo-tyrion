@@ -1,6 +1,16 @@
-language: bash
+language: generic
+
 sudo: false
-before_script:
-- echo $GOMAXPROCS
-- nproc
-- date
+
+addons:
+  apt:
+    packages:
+    - dnsutils
+
+install: echo install
+
+script:
+- cat /etc/resolv.conf
+- dig google.com
+- dig github.com
+- dig erlang.org
