@@ -1,4 +1,4 @@
-language: clojure
+language: generic
 
 sudo: required
 
@@ -14,7 +14,12 @@ install: echo install lolol
 script:
 - echo $PATH
 - which bzip2
-- bzip2 --version 2>/dev/null
+- bzip2 --version
+- dropdb test_db || true
+- createdb test_db
+- psql -ltA
+- psql -c 'CREATE TABLE test_table();' test_db
+- psql -tAc "\dt" test_db
 - sudo docker run busybox echo ohai
 - echo $JAVA_HOME
 - cat /etc/hosts
