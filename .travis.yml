@@ -14,7 +14,7 @@ install: echo install lolol
 script:
 - echo $PATH
 - which bzip2
-- bzip2 --version
+- bzip2 --version 2>/dev/null
 - sudo docker run busybox echo ohai
 - echo $JAVA_HOME
 - cat /etc/hosts
