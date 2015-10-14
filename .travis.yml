@@ -1,35 +1,18 @@
-language: generic
+language: php
 
 sudo: required
 
 dist: trusty
 
-matrix:
-  include:
-  - group: edge
-  - group: whatever
+group: edge
+
+php:
+- 5.3
+- 5.4
+- 5.5
+- 5.6
+- 7.0
 
 install: echo install lolol
 
-script:
-- echo $PATH
-- which bzip2
-- bzip2 --version
-- dropdb test_db || true
-- createdb test_db
-- psql -ltA
-- psql -c 'CREATE TABLE test_table();' test_db
-- psql -tAc "\dt" test_db
-- sudo docker run busybox echo ohai
-- echo $JAVA_HOME
-- cat /etc/hosts
-- ping -c 1 localhost
-- ping -c 1 127.0.0.1
-- python -m SimpleHTTPServer 19494 &>/dev/null &
-- sleep 3
-- curl -s 'http://localhost:19494/'
-- echo GET / | nc localhost 19494
-- python -c 'import socket;print socket.gethostname()'
-- stat ~/.ssh
-- stat ~/.ssh/authorized_keys
-- stat ~/.ssh/known_hosts
+script: echo script whatever
