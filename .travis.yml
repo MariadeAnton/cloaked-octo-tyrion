@@ -6,12 +6,8 @@ dist: trusty
 
 group: edge
 
-php:
-- 5.4.45
-- 5.5.30
-- 5.6.14
-- 7.0
+php: 5.6.14
 
-install: echo install lolol
+install: sudo apt-get update -y
 
 script: echo script whatever
