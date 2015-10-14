@@ -12,8 +12,6 @@ matrix:
 install:
 - rvm use default
 - rvm list
-- gem list
-- gem install bundler
 - bundle install --jobs=3 --retry=3
 
 script:
