@@ -1,5 +1,7 @@
 language: generic
 
+sudo: required
+
 dist: trusty
 
 matrix:
@@ -7,7 +9,10 @@ matrix:
   - group: edge
   - group: whatever
 
-install: echo whatever eh
+install:
+- rvm use default
+- rvm list
+- bundle install --jobs=3 --retry=3
 
 script:
 - sudo docker run busybox echo ohai
