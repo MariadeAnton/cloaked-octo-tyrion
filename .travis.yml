@@ -1,4 +1,4 @@
-language: generic
+language: clojure
 
 sudo: required
 
@@ -9,12 +9,11 @@ matrix:
   - group: edge
   - group: whatever
 
-install:
-- rvm use default
-- rvm list
-- bundle install --jobs=3 --retry=3
+install: echo install lolol
 
 script:
+- which bzip2
+- bzip2 --version
 - sudo docker run busybox echo ohai
 - echo $JAVA_HOME
 - cat /etc/hosts
