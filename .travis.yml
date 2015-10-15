@@ -10,7 +10,7 @@ install: echo install whatever
 
 script:
 - which pyenv || true
-- find /etc/profile.d -type f
+- pyenv versions
 - 'echo $PATH | tr ":" "\n"'
 - which python || true
 - python -V || true
