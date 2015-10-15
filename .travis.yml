@@ -9,6 +9,7 @@ group: edge
 install: echo install whatever
 
 script:
+- 'echo $PATH | tr ":" "\n"'
 - which python || true
 - python -V || true
 - which python2 || true
